@@ -37,3 +37,5 @@ if __name__ == '__main__':
     congruencial_cuadratico.menu()
   if option == 8:
     congruencial_blum.menu()
+
+  input('presiona Enter para salir...')

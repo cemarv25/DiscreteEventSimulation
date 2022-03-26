@@ -26,7 +26,7 @@ def menu():
   a = input('escribe el valor para a: ')
   c = input('escribe el valor para c: ')
   m = input('escribe el valor para m: ')
-  n = int(input('ahora escribe cuantos numeros quieres generar: '))
+  n = int(input('ahora escribe cuantos numeros quieres generar (escribe un numero negativo para ver el ciclo de vida): '))
 
   return lineal(seed, a, c, m, n)
 

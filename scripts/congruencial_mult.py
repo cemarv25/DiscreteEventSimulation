@@ -45,7 +45,7 @@ def menu():
   if has_m:
     m = input('escribe el valor para m: ')
     
-  n = int(input('ahora escribe cuantos numeros quieres generar: '))
+  n = int(input('ahora escribe cuantos numeros quieres generar (escribe un numero negativo para ver el ciclo de vida): '))
 
   return congruencial_mult(seed, k, g, n, a, m)
 
