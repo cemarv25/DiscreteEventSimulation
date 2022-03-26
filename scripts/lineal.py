@@ -2,14 +2,22 @@ def lineal(seed, a, c, m, n):
   i = 0
   xn = seed
   results = []
-  while (i < n):
+  loop = True
+  while (loop):
     xn = (int(a) * int(xn) + int(c)) % int(m)
     ri = xn / (int(m) - 1)
-    
-    results.append("{:.5f}".format(ri))
+    ri_formatted = "{:.5f}".format(ri)
+    results.append(ri_formatted)
 
     i += 1
+
+    if n > 0:
+      loop = i < n
+    else:
+      loop = ri_formatted in results
+      print('loop: ', loop)
   
+  print('numeros generados: ', i)
   return results
 
 
@@ -20,7 +28,7 @@ def menu():
   m = input('escribe el valor para m: ')
   n = int(input('ahora escribe cuantos numeros quieres generar: '))
 
-  print(lineal(seed, a, c, m, n))
+  return lineal(seed, a, c, m, n)
 
 if __name__ == "__main__":
   menu()

@@ -24,7 +24,9 @@ if __name__ == '__main__':
   if option == 3:
     mult_constante.menu()
   if option == 4:
-    lineal.menu()
+    resultados = lineal.menu()
+    for ri in resultados:
+        print(ri)
   if option == 5:
     congruencial_mult.menu()
   if option == 6:
