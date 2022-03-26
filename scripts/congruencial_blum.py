@@ -13,10 +13,13 @@ def congruencial_blum(seed, m, n):
 
   return results
 
-if __name__ == "__main__":
+def menu():
   seed = int(input('escribe la semilla: '))
   m = int(input('escribe el valor para m: '))
 
   n = int(input('ahora escribe cuantos numeros quieres generar: '))
 
   print(congruencial_blum(seed, m, n))
+
+if __name__ == "__main__":
+  menu()

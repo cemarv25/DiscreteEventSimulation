@@ -14,7 +14,7 @@ def congruencial_cuadr(seed, m, a, b, c, n):
 
   return results
 
-if __name__ == "__main__":
+def menu():
   seed = input('escribe la semilla: ')
   m = int(input('escribe el valor para m: '))
   a = int(input('escribe el valor para a: '))
@@ -25,3 +25,6 @@ if __name__ == "__main__":
   n = int(input('ahora escribe cuantos numeros quieres generar: '))
 
   print(congruencial_cuadr(seed, m, a, b, c, n))
+
+if __name__ == "__main__":
+  menu()

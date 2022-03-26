@@ -1,4 +1,4 @@
-from shared import get_middle_digits, NoMoreMiddleDigits
+import scripts.shared
 
 def productos_medios(seed1, seed2, n):
   i = 0
@@ -9,10 +9,10 @@ def productos_medios(seed1, seed2, n):
   while(i < n):
     yn = int(xn) * int(xn2)
     if len(str(yn)) < D:
-      raise NoMoreMiddleDigits('Ya no se pudieron generar nuevos numeros')
+      raise scripts.shared.NoMoreMiddleDigits('Ya no se pudieron generar nuevos numeros')
 
     xn = xn2
-    xn2 = get_middle_digits(str(yn), D)
+    xn2 = scripts.shared.get_middle_digits(str(yn), D)
 
     results.append("0." + xn2)
 
@@ -21,7 +21,7 @@ def productos_medios(seed1, seed2, n):
   return results
 
 
-if __name__ == "__main__":
+def menu():
   valid_seed = False
   while(not valid_seed):
     seed1 = input('escribe la primer semilla (minimo 3 digitos): ')
@@ -35,6 +35,9 @@ if __name__ == "__main__":
 
   try:
     print(productos_medios(seed1, seed2, n))
-  except NoMoreMiddleDigits as e:
+  except scripts.shared.NoMoreMiddleDigits as e:
     msg, vals = e.args
     print(msg, vals)
+
+if __name__ == '__main__':
+  menu()

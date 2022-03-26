@@ -1,4 +1,4 @@
-from shared import get_middle_digits, NoMoreMiddleDigits
+import scripts.shared
 
 def cuadrados_medios(seed, n):
   i = 0
@@ -8,9 +8,9 @@ def cuadrados_medios(seed, n):
   while (i < n):
     yn = pow(int(xn), 2)
     if len(str(yn)) < D:
-      raise NoMoreMiddleDigits('Ya no se pudieron generar nuevos numeros, regresando los posibles', results)
+      raise scripts.shared.NoMoreMiddleDigits('Ya no se pudieron generar nuevos numeros, regresando los posibles', results)
     
-    xn = get_middle_digits(str(yn), D)
+    xn = scripts.shared.get_middle_digits(str(yn), D)
     
     results.append("0." + xn)
 
@@ -19,7 +19,7 @@ def cuadrados_medios(seed, n):
   return results
 
 
-if __name__ == "__main__":
+def menu():
   valid_seed = False
   while(not valid_seed):
     seed = input('escribe la semilla (mayor a 3 digitos): ')
@@ -30,6 +30,9 @@ if __name__ == "__main__":
 
   try:
     print(cuadrados_medios(seed, n))
-  except NoMoreMiddleDigits as e:
+  except scripts.shared.NoMoreMiddleDigits as e:
     msg, vals = e.args
     print(msg, vals)
+
+if __name__ == "__main__":
+  menu()

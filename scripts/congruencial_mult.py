@@ -21,7 +21,7 @@ def congruencial_mult(seed, k, g, n, a, m):
   return results
 
 
-if __name__ == "__main__":
+def menu():
   seed = input('escribe la semilla: ')
   k = input('escribe el valor para k: ')
   g = input('escribe el valor para g: ')
@@ -39,3 +39,6 @@ if __name__ == "__main__":
   n = int(input('ahora escribe cuantos numeros quieres generar: '))
 
   print(congruencial_mult(seed, k, g, n, a, m))
+
+if __name__ == "__main__":
+  menu()

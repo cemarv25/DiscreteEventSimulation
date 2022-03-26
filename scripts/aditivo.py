@@ -16,7 +16,7 @@ def aditivo(xs, m, n, j):
   return results
 
 
-if __name__ == "__main__":
+def menu():
   n = input('cuantas xn hay? ')
   xs = []
   for i in range(int(n)):
@@ -24,3 +24,6 @@ if __name__ == "__main__":
   m = input('ahora escribe el valor de m: ')
   j = input('cuantos numeros quieres generar? ')
   print(aditivo(xs, m, n, j))
+
+if __name__ == "__main__":
+  menu()

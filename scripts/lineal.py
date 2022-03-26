@@ -13,7 +13,7 @@ def lineal(seed, a, c, m, n):
   return results
 
 
-if __name__ == "__main__":
+def menu():
   seed = input('escribe la semilla: ')
   a = input('escribe el valor para a: ')
   c = input('escribe el valor para c: ')
@@ -21,3 +21,6 @@ if __name__ == "__main__":
   n = int(input('ahora escribe cuantos numeros quieres generar: '))
 
   print(lineal(seed, a, c, m, n))
+
+if __name__ == "__main__":
+  menu()
