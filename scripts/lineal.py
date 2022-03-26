@@ -7,15 +7,15 @@ def lineal(seed, a, c, m, n):
     xn = (int(a) * int(xn) + int(c)) % int(m)
     ri = xn / (int(m) - 1)
     ri_formatted = "{:.5f}".format(ri)
-    results.append(ri_formatted)
 
     i += 1
 
     if n > 0:
       loop = i < n
     else:
-      loop = ri_formatted in results
-      print('loop: ', loop)
+      loop = ri_formatted not in results
+
+    results.append(ri_formatted)
   
   print('numeros generados: ', i)
   return results

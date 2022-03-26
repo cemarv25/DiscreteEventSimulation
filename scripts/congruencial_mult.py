@@ -9,15 +9,24 @@ def congruencial_mult(seed, k, g, n, a, m):
   xn_minus_one = seed
   xn = 0
   results = []
-  while (i < n):
+  loop = True
+  while (loop):
     xn = (int(a) * int(xn_minus_one)) % int(m)
     ri = xn / (int(m) - 1)
+    ri_formatted = "{:.5f}".format(ri)
     
-    results.append("{:.5f}".format(ri))
 
     i += 1
     xn_minus_one = xn
+
+    if n > 0:
+      loop = i < n
+    else:
+      loop = ri_formatted not in results
+
+    results.append(ri_formatted)
   
+  print('numeros generados: ', i)
   return results
 
 
@@ -38,7 +47,7 @@ def menu():
     
   n = int(input('ahora escribe cuantos numeros quieres generar: '))
 
-  print(congruencial_mult(seed, k, g, n, a, m))
+  return congruencial_mult(seed, k, g, n, a, m)
 
 if __name__ == "__main__":
   menu()

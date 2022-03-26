@@ -28,7 +28,9 @@ if __name__ == '__main__':
     for ri in resultados:
         print(ri)
   if option == 5:
-    congruencial_mult.menu()
+    resultados = congruencial_mult.menu()
+    for ri in resultados:
+      print(ri)
   if option == 6:
     aditivo.menu()
   if option == 7:
